@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Volume2, VolumeX, Lock, ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
+import { Volume2, VolumeX, Lock, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { soundFx } from '../utils/audio';
 
 interface Props {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, AlertCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { soundFx } from '../../utils/audio';
 
 interface Props {
