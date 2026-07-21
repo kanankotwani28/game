@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #FFF8F0;
+  --pink-color: #F7A8B8;
+  --pink-dark: #E2889B;
+  --lavender-color: #CDB4FF;
+  --cream-color: #FFF7E9;
+  --green-color: #A8D8A0;
+  --yellow-color: #FFE28A;
+  --border-color: #2F2A2A;
+
+  --font-heading: 'Press Start 2P', monospace, cursive;
+  --font-body: 'Pixelify Sans', cursive, sans-serif;
+  --font-journal: 'Patrick Hand', cursive, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-color);
+  font-family: var(--font-body);
+  color: var(--border-color);
+  overflow-x: hidden;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Pixel Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-color);
+  border-left: 2px solid var(--border-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--pink-color);
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* Typography Helpers */
+.font-pixel-title {
+  font-family: var(--font-heading);
+}
+.font-pixel {
+  font-family: var(--font-body);
+}
+.font-handwriting {
+  font-family: var(--font-journal);
+}
+
+/* Pixel Box & Shadow Utilities */
+.pixel-box {
+  background-color: var(--cream-color);
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+  border-radius: 8px;
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .pixel-box {
+    border-width: 2px;
+    box-shadow: 3px 3px 0px var(--border-color);
+  }
+}
+
+.pixel-box-pink {
+  background-color: var(--pink-color);
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+  border-radius: 8px;
+}
+
+.pixel-box-lavender {
+  background-color: var(--lavender-color);
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+  border-radius: 8px;
+}
+
+.pixel-box-yellow {
+  background-color: var(--yellow-color);
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px var(--border-color);
+  border-radius: 8px;
+}
+
+.pixel-btn {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  padding: 12px 20px;
+  background-color: var(--pink-color);
+  color: var(--border-color);
+  border: 3px solid var(--border-color);
+  box-shadow: 0 4px 0 var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .pixel-btn {
+    font-size: 0.7rem;
+    padding: 10px 14px;
+    border-width: 2px;
+    box-shadow: 0 3px 0 var(--border-color);
+    gap: 6px;
+  }
+}
+
+.pixel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--border-color);
+  background-color: #ffb8c6;
+}
+
+.pixel-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--border-color);
+}
+
+.pixel-btn-lavender {
+  background-color: var(--lavender-color);
+}
+.pixel-btn-lavender:hover {
+  background-color: #d9c5ff;
+}
+
+.pixel-btn-green {
+  background-color: var(--green-color);
+}
+.pixel-btn-green:hover {
+  background-color: #b9eab1;
+}
+
+.pixel-btn-yellow {
+  background-color: var(--yellow-color);
+}
+.pixel-btn-yellow:hover {
+  background-color: #ffd85b;
+}
+
+/* Scrapbook Tape Accent */
+.tape-accent {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(0,0,0,0.2);
+  transform: rotate(-5deg);
+  z-index: 10;
+}
+.tape-top-left {
+  top: -10px;
+  left: 20px;
+}
+.tape-top-right {
+  top: -10px;
+  right: 20px;
+  transform: rotate(5deg);
+}
+
+/* Keyframe Animations */
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.animate-sway {
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes floatCloud {
+  0% { transform: translateX(-10%); }
+  50% { transform: translateX(10%); }
+  100% { transform: translateX(-10%); }
+}
+
+.animate-cloud {
+  animation: floatCloud 25s ease-in-out infinite;
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2.5s ease-in-out infinite;
+}
+
+@keyframes sparklePulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.animate-sparkle {
+  animation: sparklePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pageFlip {
+  0% { transform: rotateY(90deg); opacity: 0; }
+  100% { transform: rotateY(0deg); opacity: 1; }
+}
+
+.animate-page-turn {
+  animation: pageFlip 0.6s ease-out forwards;
+  transform-style: preserve-3d;
+}
+
+/* Scrapbook Polaroid */
+.polaroid {
+  background-color: #ffffff;
+  padding: 12px 12px 28px 12px;
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
+}
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+.polaroid-caption {
+  font-family: var(--font-journal);
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 8px;
+  color: var(--border-color);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Touch device: hide custom cursor */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor-canvas,
+  .custom-cursor-emoji {
+    display: none !important;
+  }
+}
+
+/* Mobile typography scaling */
+@media (max-width: 480px) {
+  .font-pixel-title {
+    letter-spacing: 0.05em;
+  }
+  .polaroid {
+    padding: 8px 8px 20px 8px;
+    border-width: 2px;
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+  }
+  .polaroid-caption {
+    font-size: 1.1rem;
+  }
+  .tape-accent {
+    width: 40px;
+    height: 14px;
+  }
+}
