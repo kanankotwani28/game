@@ -32,6 +32,7 @@ html, body {
   overflow-x: hidden;
   cursor: default;
   -webkit-tap-highlight-color: transparent;
+  padding: 20px;
 }
 
 /* Custom Pixel Scrollbar */

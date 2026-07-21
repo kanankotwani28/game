@@ -47,8 +47,8 @@ export const Navbar: React.FC<Props> = ({
 
   return (
     <>
-      <header className="w-full h-14 sm:h-16 bg-[#FFF8F0] border-b-4 border-[#2F2A2A] shadow-md flex items-center shrink-0 z-40 px-6 sm:px-12 md:px-20 lg:px-32 xl:px-40">
-        <div className="w-full max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+      <header className="w-full h-14 sm:h-16 bg-[#FFF8F0] border-b-4 border-[#2F2A2A] shadow-md flex items-center shrink-0 z-40">
+        <div className="w-full max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Left: Brand Title */}
           <div

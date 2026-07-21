@@ -43,12 +43,32 @@ export const App: React.FC = () => {
       soundFx.startLofiMusic();
       window.removeEventListener('click', handleFirstInteraction);
     };
+
     window.addEventListener('click', handleFirstInteraction);
-    return () => window.removeEventListener('click', handleFirstInteraction);
+
+    return () => {
+      window.removeEventListener('click', handleFirstInteraction);
+    };
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FFF8F0] text-[#2F2A2A] relative overflow-x-hidden selection:bg-[#F7A8B8] flex flex-col">
+    <div
+      className="
+        min-h-screen
+        bg-[#FFF8F0]
+        text-[#2F2A2A]
+        relative
+        overflow-x-hidden
+        selection:bg-[#F7A8B8]
+        flex
+        flex-col
+        pl-6 pr-6
+        sm:pl-10 sm:pr-10
+        md:pl-16 md:pr-16
+        lg:pl-20 lg:pr-20
+        xl:pl-24 xl:pr-24
+      "
+    >
       {/* Custom Cursor */}
       <CustomCursor />
 
@@ -65,8 +85,8 @@ export const App: React.FC = () => {
         onToggleMute={handleToggleMute}
       />
 
-      {/* Main Content Area - Generous left and right padding applied */}
-      <main className="flex-grow relative z-10 px-6 sm:px-12 md:px-20 lg:px-32 xl:px-40 py-3 sm:py-4 mt-1 sm:mt-2 md:mt-4 w-full max-w-[1400px] mx-auto flex flex-col justify-stretch lg:h-[calc(100vh-5rem)] lg:overflow-hidden overflow-y-auto">
+      {/* Main Content */}
+      <main className="flex-grow relative z-10 py-3 sm:py-4 mt-1 sm:mt-2 md:mt-4 w-full max-w-6xl mx-auto flex flex-col justify-stretch lg:h-[calc(100vh-5rem)] lg:overflow-hidden overflow-y-auto">
         {currentStage === 1 && (
           <HomeStage
             onStart={() => unlockNextStage(2)}
@@ -99,10 +119,12 @@ export const App: React.FC = () => {
         )}
 
         {currentStage === 8 && (
-          <LetterStage onPlayAgain={() => {
-            setUnlockedStage(1);
-            setCurrentStage(1);
-          }} />
+          <LetterStage
+            onPlayAgain={() => {
+              setUnlockedStage(1);
+              setCurrentStage(1);
+            }}
+          />
         )}
       </main>
     </div>
