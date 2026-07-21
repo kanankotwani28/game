@@ -15,14 +15,14 @@ interface MemoryCard {
 
 export const MemoriesStage: React.FC<Props> = ({ onNext }) => {
   const [cards, setCards] = useState<MemoryCard[]>([
-    { id: 1, flowerEmoji: '🌸', memoryText: 'Our first conversation ❤️', isFlipped: false },
-    { id: 2, flowerEmoji: '🌷', memoryText: "That day we couldn't stop laughing.", isFlipped: false },
-    { id: 3, flowerEmoji: '🌻', memoryText: 'Late-night talks.', isFlipped: false },
-    { id: 4, flowerEmoji: '🌺', memoryText: 'Our favorite song.', isFlipped: false },
-    { id: 5, flowerEmoji: '🌼', memoryText: 'That cute photo together.', isFlipped: false },
-    { id: 6, flowerEmoji: '🌹', memoryText: 'The day you made me happiest.', isFlipped: false },
-    { id: 7, flowerEmoji: '🪻', memoryText: 'Every random little moment.', isFlipped: false },
-    { id: 8, flowerEmoji: '⭐', memoryText: 'The best memory is still being written.', isFlipped: false }
+    { id: 1, flowerEmoji: '🌸', memoryText: 'Thank you for always listening to me even i was not kind to you', isFlipped: false },
+    { id: 2, flowerEmoji: '🌷', memoryText: "I still smile when I think about how our story began. I had no idea that one day you'd become so important to me.", isFlipped: false },
+    { id: 3, flowerEmoji: '🌻', memoryText: 'I love you more than words can express, and I can\'t wait to see what the future holds for us.', isFlipped: false },
+    { id: 4, flowerEmoji: '🌺', memoryText: 'Even on the days when things weren\'t perfect, you were always there to make me laugh.', isFlipped: false },
+    { id: 5, flowerEmoji: '🌼', memoryText: 'Thank you for believing in me, especially during the moments when I doubted myself.', isFlipped: false },
+    { id: 6, flowerEmoji: '🌹', memoryText: 'Some of my favorite memories are just us talking until neither of us wanted to say goodnight.', isFlipped: false },
+    { id: 7, flowerEmoji: '🪻', memoryText: 'I still smile when I think about how our story began. I had no idea that one day you\'d become so important to me.', isFlipped: false },
+    { id: 8, flowerEmoji: '⭐', memoryText: 'My favorite memory hasn\'t happened yet. I hope we still have countless beautiful moments waiting for us.', isFlipped: false }
   ]);
 
   const flippedCount = cards.filter(c => c.isFlipped).length;
